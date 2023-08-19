@@ -1,17 +1,21 @@
+const BotaoDeleta = () => { 
+    const botaoDeleta = document.createElement('button')
 
-const BotaoDeleta = () =>{
-    const botao_deleta = document.createElement('button');
-    botao_deleta.innerText = 'deletar';
+    botaoDeleta.innerText = 'deletar'
+    botaoDeleta.addEventListener('click', deletarTarefa)
 
-    botao_deleta.addEventListener('click', deletarTarefa)
-
-    return botao_deleta;
+    return botaoDeleta
 }
 
-const deletarTarefa = (evento) =>{
-    const botaoDeleta = evento.target;
-    const tarefaCompleta = botaoDeleta.parentElement;
-    tarefaCompleta.remove();
+const deletarTarefa = (evento) => { 
+    const botaoDeleta = evento.target
+    
+    const tarefaCompleta = botaoDeleta.parentElement
+
+    tarefaCompleta.remove()
+
+    return botaoDeleta;
+
 }
 
-export default BotaoDeleta;
+export default BotaoDeleta

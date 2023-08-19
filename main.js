@@ -1,24 +1,27 @@
-import BotaoConclui from "./componentes/concluiTarefa.js";
-import BotaoDeleta from "./componentes/deletaTarefa.js";
-const criarTarefa = (evento) => {
-  evento.preventDefault(); // impede o formulário de enviar os dados para algum lugar
+import BotaoConclui from './componentes/concluiTarefa.js'
+import BotaoDeleta from './componentes/deletaTarefa.js'
+ 
+    const criarTarefa = (evento) => {
 
-  const lista = document.querySelector("[data-list]");
-  const input = document.querySelector("[data-form-input]");
-  const valor = input.value;
+    evento.preventDefault()
 
-  const tarefa = document.createElement("li");
-  tarefa.classList.add("task");
-  const conteudo = `<p class="content">${valor}</p>`;
+    const lista = document.querySelector('[data-list]')
+    const input = document.querySelector('[data-form-input]')
+    const valor = input.value
 
-  tarefa.innerHTML = conteudo;
+    const tarefa = document.createElement('li')
+    tarefa.classList.add('task')
+    const conteudo = `<p class="content">${valor}</p>`
 
-  tarefa.appendChild(BotaoConclui());
-  tarefa.appendChild(BotaoDeleta());
-  lista.appendChild(tarefa);
+    tarefa.innerHTML = conteudo
 
-  input.value = "";
-};
+    tarefa.appendChild(BotaoConclui())
+    tarefa.appendChild(BotaoDeleta())
+    lista.appendChild(tarefa)
+    input.value = " "
 
-const novaTarefa = document.querySelector("[data-form-button]");
-novaTarefa.addEventListener("click", criarTarefa);
+}
+
+const novaTarefa = document.querySelector('[data-form-button]')
+
+novaTarefa.addEventListener('click', criarTarefa)
